@@ -8,7 +8,7 @@
 
 // Note that the output array will have one fewer elements than the input.
 
-function solution(a) {
+function task_1(a) {
   const differences = []
 
   for (let i = 0; i < a.length - 1; i++) {
@@ -40,7 +40,7 @@ function solution(a) {
 
 // Try to do this without creating any new arrays except for the True / False result array.
 
-function solution(a, window_size) {
+function task_2(a, window_size) {
   const result = []
 
   for (let i = 0; i <= a.length - window_size; i++) {
@@ -53,6 +53,39 @@ function solution(a, window_size) {
     }
 
     result.push(allOdd)
+  }
+
+  return result
+}
+
+// Task 3
+
+// Write a function that moves a "window" over an array, processing the values under the window as it goes.
+
+// For example, a window of size 3 moving across an array of length 9 might look like this for the first 3 moves (window is the bar over the values):
+
+//  _____
+//  6 2 8 3 7 9 1 0 5    Window over 6,2,8
+
+//    _____
+//  6 2 8 3 7 9 1 0 5    Window over 2,8,3
+
+//      _____
+//  6 2 8 3 7 9 1 0 5    Window over 8,3,7
+// Your goal is to return an array of averages of the values under the window as it moves.
+
+function task_3(a, window_size) {
+  const result = []
+
+  for (let i = 0; i <= a.length - window_size; i++) {
+    let windowTotal = 0
+
+    for (let j = 0; j < window_size; j++) {
+      windowTotal += a[i + j]
+    }
+
+    const windowAverage = windowTotal / window_size
+    result.push(windowAverage)
   }
 
   return result
