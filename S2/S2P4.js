@@ -114,3 +114,27 @@ function task_4(a) {
 
   return result
 }
+
+// Task 5
+
+// Avoid using built-in functions to solve this challenge. Implement them yourself, since this is what you would be asked to do during a real interview.
+
+// Implement a function that takes two strings, s and x, as arguments and finds the first occurrence of the string x in s. The function should return an integer indicating the index in s of the first occurrence of x. If there are no occurrences of x in s, return -1.
+
+// NOTES: The solution I came up with, below, is unoptimized -- there is definitely a better way to solve this problem, but this brute-force approach is functional for small inputs.
+
+function task_5(s, x) {
+  for (let i = 0; i <= s.length - x.length; i++) {
+    let windowString = ""
+
+    for (let j = 0; j < x.length; j++) {
+      windowString += s[i + j]
+    }
+
+    if (x === windowString) {
+      return i
+    }
+  }
+
+  return -1
+}
