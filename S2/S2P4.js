@@ -90,3 +90,27 @@ function task_3(a, window_size) {
 
   return result
 }
+
+// Task 4
+
+// You are given an array of integers a. Your task is to calculate how many numbers in the array are equal to the arithmetic mean of their immediate neighbors.
+
+// In other words, count the number of indices i such that a[i] = (a[i - 1] + a[i + 1]) / 2.
+
+// Note: If a[i - 1] or a[i + 1] don't exist, they should be considered equal to 0.
+
+function task_4(a) {
+  let result = 0
+
+  for (let i = 0; i < a.length; i++) {
+    // If neighbor undefined, set side value to 0
+    const leftSide = a[i - 1] ? a[i - 1] : 0
+    const rightSide = a[i + 1] ? a[i + 1] : 0
+
+    if (a[i] === (leftSide + rightSide) / 2) {
+      result++
+    }
+  }
+
+  return result
+}
