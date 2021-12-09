@@ -18,3 +18,42 @@ function solution(a) {
 
   return differences
 }
+
+// Task 2
+
+// Write a function that moves a "window" over an array, processing the values under the window as it goes.
+
+// For example, a window of size 3 moving across an array of length 9 might look like this for the first 3 moves(window is the bar over the values):
+
+// _____
+// 6 2 8 3 7 9 1 0 5    Window over 6,2,8
+
+//   _____
+// 6 2 8 3 7 9 1 0 5    Window over 2,8,3
+
+//     _____
+// 6 2 8 3 7 9 1 0 5    Window over 8,3,7
+
+// And the last window in that example would be 1, 0, 5.
+
+// Your goal is to return an array of true / false values.True if all the numbers under the window are odd(not evenly divisible by 2), otherwise false.
+
+// Try to do this without creating any new arrays except for the True / False result array.
+
+function solution(a, window_size) {
+  const result = []
+
+  for (let i = 0; i <= a.length - window_size; i++) {
+    let allOdd = true
+
+    for (let j = 0; j < window_size; j++) {
+      if (a[i + j] % 2 == 0) {
+        allOdd = false
+      }
+    }
+
+    result.push(allOdd)
+  }
+
+  return result
+}
