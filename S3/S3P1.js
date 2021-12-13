@@ -33,6 +33,7 @@ function task_1(s, letters) {
 
   return result
 }
+
 /*
 
 Task 2
@@ -72,5 +73,42 @@ function task_2(s) {
   result = result.trim()
 
   // return the output string
+  return result
+}
+
+/*
+
+Task 3
+
+Given a string of lowercase words separated by single spaces, return a string with all duplicate words removed. However, the first occurrence of a duplicate word should be left in place; only the subsequent duplicates should be removed.
+
+If the string is empty, return an empty string.
+
+*/
+
+function task_3(s) {
+  let result = ""
+  if (s.length === 0) {
+    return result
+  }
+
+  // make an array of all the words
+  const words = s.split(" ")
+
+  // loop over the word array, adding unique words to an object
+  const uniqueWords = {}
+  for (let word of words) {
+    if (!(word in uniqueWords)) {
+      uniqueWords[word] = 1
+
+      // after adding unique words to uniqueWords, add the word to the result string
+      result += `${word} `
+    }
+  }
+
+  // trim the result string
+  result = result.trim()
+
+  // return the result string
   return result
 }
