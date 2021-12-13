@@ -33,3 +33,44 @@ function task_1(s, letters) {
 
   return result
 }
+/*
+
+Task 2
+
+Count all the words in a string, then produce a new string when the count of each word in parentheses follows each word.
+
+If the string is empty, return an empty string.
+
+*/
+
+function task_2(s) {
+  let result = ""
+
+  if (s.length === 0) {
+    return result
+  }
+
+  // split the original string into an array of words
+  const words = s.split(" ")
+
+  // add each unique word to an object, with a count
+  const uniqueWords = {}
+
+  for (let word of words) {
+    if (!(word in uniqueWords)) {
+      uniqueWords[word] = 0
+    }
+
+    uniqueWords[word]++
+  }
+
+  // create desired output string using the word and the count
+  for (let word of words) {
+    result += `${word}(${uniqueWords[word]}) `
+  }
+
+  result = result.trim()
+
+  // return the output string
+  return result
+}
