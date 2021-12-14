@@ -92,3 +92,23 @@ function task_2(s) {
 
   return result.sort()
 }
+
+/*
+
+Task 3
+
+Write a function that returns the nth number of the Fibonacci sequence.
+
+Cache the results of each run to ensure the function does not perform duplicate calculations.
+
+*/
+
+function task_3(n) {
+  const cache = { "0": 0, "1": 1 }
+
+  if (!(n in cache)) {
+    cache[n] = task_3(n - 2) + task_3(n - 1)
+  }
+
+  return cache[n]
+}
