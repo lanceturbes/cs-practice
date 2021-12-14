@@ -44,3 +44,51 @@ function task_1(nums) {
 
   return result
 }
+
+/*
+
+Task 2
+
+Produce a histogram of word frequency in a string.
+
+The function should return an array of strings, where each string takes the form:
+
+word: ####
+
+word is the word in question, followed by a colon and a space, followed by a number of hash marks that corresponds to the number of times that word appears in the input string.
+
+The result array should be sorted alphabetically. This can be done by calling .sort() of the array before returning it.
+
+If the input string is empty, return an empty array.
+
+*/
+
+function task_2(s) {
+  const result = []
+  const cache = {}
+  const words = s.split(" ")
+
+  if (s.length === 0) {
+    return result
+  }
+
+  for (let word of words) {
+    if (!(word in cache)) {
+      cache[word] = 1
+    } else {
+      cache[word]++
+    }
+  }
+
+  for (let word in cache) {
+    let entry = `${word}: `
+
+    for (let i = 0; i < cache[word]; i++) {
+      entry += "#"
+    }
+
+    result.push(entry)
+  }
+
+  return result.sort()
+}
