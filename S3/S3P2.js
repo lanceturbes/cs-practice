@@ -103,9 +103,9 @@ Cache the results of each run to ensure the function does not perform duplicate 
 
 */
 
-function task_3(n) {
-  const cache = { "0": 0, "1": 1 }
+const cache = { "0": 0, "1": 1 }
 
+function task_3(n) {
   if (!(n in cache)) {
     cache[n] = task_3(n - 2) + task_3(n - 1)
   }
