@@ -45,8 +45,10 @@ If the string is empty, return an empty string.
 */
 
 function task_2(s) {
+  // initialize result string
   let result = ""
 
+  // account for empty string edge case
   if (s.length === 0) {
     return result
   }
@@ -70,10 +72,8 @@ function task_2(s) {
     result += `${word}(${uniqueWords[word]}) `
   }
 
-  result = result.trim()
-
-  // return the output string
-  return result
+  // return the output string, trimmed
+  return result.trim()
 }
 
 /*
