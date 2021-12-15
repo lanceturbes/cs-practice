@@ -66,3 +66,27 @@ function task_3(head) {
 
   return sum
 }
+
+/*
+
+Task 4
+
+Given a linked list, return the value of the tail node in the list.
+
+If the input list is empty, return -9999.
+
+*/
+
+function task_4(a) {
+  let tail_node = a
+
+  if (!tail_node) {
+    return -9999
+  }
+
+  while (tail_node.next !== null) {
+    tail_node = tail_node.next
+  }
+
+  return tail_node.value
+}
