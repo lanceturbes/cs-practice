@@ -25,3 +25,23 @@ function task_1(a, b, c) {
 
   return a_node
 }
+
+/*
+
+Task 2
+
+Given a linked list of integers, return length of the list--i,e, the number of nodes in the list.
+
+*/
+
+function task_2(head) {
+  let length = 0
+  let cur_node = head
+
+  while (cur_node) {
+    length++
+    cur_node = cur_node.next
+  }
+
+  return length
+}
