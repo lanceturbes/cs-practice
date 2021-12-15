@@ -90,3 +90,48 @@ function task_4(a) {
 
   return tail_node.value
 }
+
+/*
+
+Task 5
+
+Insert a new value at the head of a linked list.
+
+You have to wrap the value n into a ListNode() object.
+
+Return a reference to the new head of the list.
+
+*/
+
+function task_5(n, a) {
+  const new_head = new ListNode(n)
+
+  new_head.next = a
+
+  return new_head
+}
+
+/*
+
+Task 6
+
+Given a list and a value, append the value to the end of the list.
+
+You have to wrap the value into a ListNode() object.
+
+Return a reference to the head of the list.
+
+*/
+
+function task_6(a, n) {
+  const new_tail_node = new ListNode(n)
+  let orig_tail_node = a
+
+  while (orig_tail_node.next !== null) {
+    orig_tail_node = orig_tail_node.next
+  }
+
+  orig_tail_node.next = new_tail_node
+
+  return a
+}
