@@ -45,3 +45,24 @@ function task_2(head) {
 
   return length
 }
+/*
+
+Task 3
+
+Given a linked list, return the sum of all the values in the list.
+
+If the input list is empty, return 0.
+
+*/
+
+function task_3(head) {
+  let sum = 0
+  let cur_node = head
+
+  while (cur_node) {
+    sum += cur_node.value
+    cur_node = cur_node.next
+  }
+
+  return sum
+}
